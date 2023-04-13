@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Webコンテンツデザイン各論３：CSS（4/4:次回の準備）</title>
+        <link rel="stylesheet" href="WCD.css">
+        <!-- Webフォント用 -->
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    <body>
+      <span class="small"><div id="time">経過時間：0秒</div></span>
+
+        <header>
+          <h1>Webコンテンツデザイン各論３：CSS（4/4:様々なセレクタ）</h1>
+          <p class="right">
+            講師：平井 辰典<br>
+            <progress value="0.75"></progress><br>
+            (75％ / 100％)
+          </p>
+        </header>
+
+        <section> <!-- 動画 -->
+          <p>
+            <a href="WCD1_CSS3.html">[前の項目へ]</a>
+          </p>
+          <h2>④様々なセレクタ</h2>
+
+          <p class="doc">
+            以下の項目を一つずつ読んで内容を理解してください．<br>
+            最後に練習問題に取り組んで次の内容に進みましょう．<br>
+          </p>
+        </section>
+
+        <nav>
+          <h2>本項目の目次</h2>
+          <ul>
+            <li><a href="#sec1">ID属性</a>
+            <li><a href="#sec2">その他のセレクタ</a>
+            <li><a href="#sec3">演習③：背景の設定</a>
+            <li><a href="#sec3">まとめ</a>
+          </ul>
+          <ul>
+            <li><a href="#ex4">練習問題４</a>
+          </ul>
+        </nav>
+
+        <div class="anmt">
+          <section id="sec1"> <!-- sec1 -->
+            <div class="hidden_box">
+              <label for="label1">ID属性<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label1"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-30.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    class属性以外にも，要素に名前を付ける方法としてID属性というものがあります．<br>
+                    基本的にはclass属性と同じような使い方ができて，CSSのセレクタの記述部分にはID名の前に「#」をつけます．<br>
+                    classとIDの違いは，こちらのイラストのように，classは複数の要素に同じ名前のものをつけてもよいが，IDは１つ１つ違った名前のものをつけなければいけないということです．<br>
+                    CSSでは，一般的に複数の要素に対して統一したデザインを適用することが多いので，IDのような一度きりの要素選択はあまり行いません．<br>
+                    一方で，来週以降学習するJavaScriptでは，このIDを多用しますので，これを機に覚えておいてください．
+                  </div>
+                </div>
+                <p class="doc">
+                  ↑の吹き出しをクリックすると，音声が読み上げられます．（環境依存あり）
+                </p>
+
+                <div class="slide"><img src="slides/03-31.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    ID属性の使用例です．<br>
+                    基本的にはclass属性のときと一緒です．<br>
+                    「．」が「＃」になっただけです．<br><br>
+
+                    では，実際に皆さんもtest3.htmlとtest3.cssにこちらの赤字の内容を追加してみてください．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-32.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    前のスライドの内容を適用した結果はこのようになります．<br>
+                    ちょっと小さくて見えづらいので拡大してみると，学生番号の部分は緑色の文字色に，名前の方は赤色になっています．<br>
+                    これは，前にdivタグの要素は赤色の文字とするように指定しているからですね．<br>
+                    また，「平井辰典」の方は文字サイズが80%に縮小していますので，わかりづらいですがほんの少し小さくなっています．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="sec2"> <!-- sec2 -->
+            <div class="hidden_box">
+              <label for="label2">その他のセレクタ<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label2"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-33.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    次は，逆にタグやclassに関係なくすべての要素に一括してスタイルを適用するセレクタ，ユニバーサルセレクタです．<br>
+                    これは，セレクタの部分に「*」を記述するだけで，すべての要素に一様にスタイルが適用されます．<br>
+                    「*」はワイルドカードと呼ばれ，すべての要素という意味が含まれています．<br><br>
+
+                    こちらの例の場合，「*{color:yellow;}」ですべての文字色を黄色にしたいところなんですが，いかんせん「*」は条件が緩いため，スタイル適用の優先順位が最も低くなっています．<br>
+                    そのため，これまでに書いた他の記述をすべてコメントアウトしなければ，すべての文字色が黄色に変えられません．<br><br>
+
+                    こんな効力が弱いユニバーサルセレクタをどんなときに使うかと言うと，画面全体の文字色や背景色などを変えたいときです．<br>
+                    デフォルトの状態だとあらゆるWebページは白い背景に黒い文字となっています．<br>
+                    ですが，黒い背景に白い文字でもいいわけですよね．<br>
+                    そういったときに，ユニバーサルセレクタで設定しておくと，Webページのベースの色が変えられます．<br>
+                    みなさんもtest3.cssで実際に試してみてください．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-34.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    続いて，属性セレクタです．<br>
+                    これは，条件によってスタイルを適用するためのセレクタです．<br>
+                    「こういうリンクの場合は強調したい」といった用途で使います．<br>
+                    実際にこの例の内容をtest3.htmlとtest3.cssに記述して動作を確認してみてください．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-35.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    次は疑似クラスです．<br>
+                    これは，aタグに対してよく使われます．<br>
+                    aタグの中でも，未訪問のリンク，訪問済みのリンクなどで色を変えておくと，Webページを見るときに同じリンクをクリックしなくてすんで便利ですよね．<br>
+                    そのスタイルを設定するためにこれが使われます．<br>
+                    順番は，上からlink, visited, hover, activeとするようにしてください．<br><br>
+
+                    では皆さんも実際にtest3.cssに上記の内容を書いて確認してみてください．<br>
+                    「/*」と「*/」で囲まれた青地の部分はコメントになります．<br>
+                    動作には影響しませんが，メモとなるのでこれも書いてみてください．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-36.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    疑似要素は，ある要素内の特定の行や文字に対してスタイルを適用するものです．<br>
+                    こちらの例では，１文字目に対してのみスタイルを適用させたり，あるタグの直前直後に要素を追加するなどの例を示しています．<br><br>
+
+                    実際にtest3.cssに上記を追加して結果を確認してみましょう．<br>
+                    右側の「実行結果」と同じような見た目になっていれば問題ありません．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="sec3"> <!-- sec3 -->
+            <div class="hidden_box">
+              <label for="label3">演習③：背景の設定<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label3"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-37.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    最後に，背景のスタイルの指定方法について学びましょう．<br>
+                    背景は，基本的にHTMLの画面内のコンテンツであるbodyタグに対して適用します．<br>
+                    background-colorというプロパティで背景の色を変えられます．<br><br>
+
+                    他にも，画像を指定することなどもできます．<br>
+                    ただし，画像のサイズとブラウザの画面のサイズが一致しているということはなかなかないので，画像を繰り返し表示したりすることで，背景全面を画像で埋めたりします．<br>
+                    背景画像に関するプロパティは色々ありますが，backgroundというプロパティで一括して指定することも可能です．<br>
+                    ですがこれは上級者向けなので，慣れていないうちは一つ一つのプロパティに対して値を設定していくのが無難かと思います．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-38.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    本日最後の演習です．<br>
+                    この吹き出しの下にあるタイルの画像（bg.png）を保存（右クリックで画像を保存）し，それをtest3.htmlの背景に設定してください．<br>
+                    条件はスライドに示している通りです．スクロールしても背景画像が上部に張り付いているような状態にしてみてください．<br><br>
+
+                    画像ファイルを置く場所も重要なのでどこに置くべきか，先週のHTMLのimgタグの内容の部分を再確認してください．<br>
+                    なお，ここでは，CSSのスタイルとして背景を設定するのでHTMLの方はいじらないで大丈夫です．
+                  </div>
+                </div><br>
+                <div class="mid"><img src="bg.png"><br><br>
+                bg.png（↑を右クリックして画像ファイルを各自のPCに保存する）</div><br><br>
+
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    できたでしょうか？<br>
+                    できたら今日の内容はここまでとなります．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="sec4"> <!-- sec4 -->
+            <div class="hidden_box">
+              <label for="label4">まとめ<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label4"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-39.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    まとめです．<br>
+                    本日はCSSの復習＋αを行いました．<br>
+                    実は，この講義はWebプログラミングがメインなので，CSSは来週以降はほとんど使いません．<br>
+                    しかし，Webコンテンツのデザインをする上でCSSは重要な要素なので学習していただきました．<br>
+                    一方で，classやIDといった概念は，この先のJavaScriptでも使っていきますので，しっかりと覚えておいてください．<br><br>
+
+                    講義内容などに質問等がある方は，授業支援システムの「質問・相談フォーラム」に書き込んでください．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="ex4"> <!-- 練習問題 -->
+            <h2>練習問題４</h2>
+            <div class="doc">
+              受講完了画面に進むためには，練習問題に取り組み，正答する必要があります．<br>
+              わからない場合には，講義資料に戻って内容を理解するようにしてください．<br><br>
+
+              <div class="ex">
+                <u>問題：</u><br>
+                CSSファイルにdiv#test{~~~~~~}というセレクタがあったとき，スタイルが適用されるのは，どのような要素か？
+              </div>
+            </div>
+            <p class="doc">
+              １．<a href="#sec1" class="qanda">divタグ全て</a><br>
+              ２．<a href="#sec1" class="qanda">testタグ</a><br>
+              ３．<a href="#sec1" class="qanda">testタグの中のdivというIDを持つ要素</a><br>
+              ４．<a href="#sec1" class="qanda">testというIDを持つ要素全て</a><br>
+              ５．<a href="#sec1" class="qanda">divタグでtestというclassに該当する要素</a><br>
+              ６．<a href="#sec1" class="qanda">testというclassに該当する要素</a><br>
+              ７．<a href="fin-3.html" class="qanda" id="correct">divタグで，testというIDに該当する要素</a><br>
+              ８．<a href="#sec1" class="qanda">divというclassでtestというタグを持つ要素</a><br>
+            </p>
+          </section>
+        </div>
+
+        <footer>
+          © Faculty of Global Media Studies, Komazawa Univesity 2022.
+        </footer>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="WCD.js"></script>
+    </body>
+</html>

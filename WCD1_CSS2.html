@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Webコンテンツデザイン各論３：CSS（2/4:CSSファイルの編集）</title>
+        <link rel="stylesheet" href="WCD.css">
+        <!-- Webフォント用 -->
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    <body>
+      <span class="small"><div id="time">経過時間：0秒</div></span>
+
+        <header>
+          <h1>Webコンテンツデザイン各論３：CSS（2/4:CSSファイルの編集）</h1>
+          <p class="right">
+            講師：平井 辰典<br>
+            <progress value="0.25"></progress><br>
+            (25％ / 100％)
+          </p>
+        </header>
+
+        <section> <!-- 動画 -->
+          <p>
+            <a href="WCD1_CSS1.html">[前の項目へ]</a>
+          </p>
+          <h2>②CSSファイルの編集</h2>
+
+          <p class="doc">
+            以下の項目を一つずつ読んで内容を理解してください．<br>
+            最後に練習問題に取り組んで次の内容に進みましょう．<br>
+          </p>
+        </section>
+
+        <nav>
+          <h2>本項目の目次</h2>
+          <ul>
+            <li><a href="#sec1">CSSファイルの編集手順</a>
+            <li><a href="#sec2">その他のスタイル適用方法</a>
+          </ul>
+          <ul>
+            <li><a href="#ex2">練習問題２</a>
+          </ul>
+        </nav>
+
+        <div class="anmt">
+          <section id="sec1"> <!-- sec1 -->
+            <div class="hidden_box">
+              <label for="label1">CSSファイルの編集手順<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label1"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-16.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    Atomを使うと，二つのファイルを画面の左右で同時に編集することができます．<br>
+                    HTMLファイルとCSSファイルの二つを同時に編集するのに適しています．<br>
+                    Windowsの人は，Ctrl+K，Macの人はCmd+Kを押した後に，左右の矢印キーを押してみてください．<br>
+                    画面が左右に分割されるので便利です．
+                  </div>
+                </div>
+                <p class="doc">
+                  ↑の吹き出しをクリックすると，音声が読み上げられます．（環境依存あり）
+                </p>
+
+                <div class="slide"><img src="slides/03-17.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    HTMLとCSSを編集する際には，テキストエディタに加えて，ブラウザの方も開いておいて，常に変更の結果を確認できるようにしておきましょう．<br>
+                    画面が小さなノートPCでの作業ではなかなか難しいかもしれませんが，デュアルディスプレイなどの環境がある人は，手元にAtomを開き，もう一つのディスプレイでブラウザを開いておくと作業効率が非常に高くなります．<br>
+                    Atomの方で何かを編集する度に保存し，その変更の結果を常にブラウザで確認できるようにしておきましょう．<br>
+                    ブラウザの更新は，Windowsの人はF5キー，Macの人はCmd+Rです．<br><br>
+
+                    Webファイルの編集作業は編集と確認の繰り返しです．<br>
+                    それもなるべく小まめにサイクルを回すことです．１時間以上作業した後に初めてブラウザで結果を確認したりといったことをしてもうまくはいきません．<br>
+                    私もこの講義資料を作るために，今も繰り返しCtrl+SとF5キーを押し続けています．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="sec2"> <!-- sec2 -->
+            <div class="hidden_box">
+              <label for="label2">その他のスタイル適用方法<span class="small">（クリックして表示）</small></label>
+              <input type="checkbox" id="label2"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="slide"><img src="slides/03-18.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    CSSを用いてHTMLにスタイルを適用する方法は，他にもあります．<br>
+                    が，どれも<span class="important"><u>非推奨の方法</u></span>です．<br>
+                    ここで紹介する方法は，少なくともこの講義内では使わないようにしてください．<br><br>
+
+                    それならわざわざ紹介しなければいいと思うかもしれませんが，インターネットなどで調べていると，この非推奨の書き方でCSSを記述しているケースが非常に多いからです．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-19.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    一つ目の非推奨の方法は，headタグ内にstyleタグを使ってCSSのスタイルを記述する方法です．<br>
+                    styleタグで囲んだ部分は，CSSファイルに書くのと同じ記述で書くことができます．<br>
+                    問題は，そのスタイルの適用範囲が該当のHTMLファイルにしか及ばないということです．<br>
+                    もしも複数のページからなるWebサイトを作る際には，この書き方をしようと思うと，すべてのHTMLファイルのhead内に同じ内容を記述しなければならなくなってしまいます．<br><br>
+
+                    このように，コンテンツとデザインを切り離して扱えないと，Webサイト全体を通じてデザインを統一するといったことが難しくなってしまいます．<br><br>
+
+                    ただ，この書き方は，Yahoo! 知恵袋などの回答では多く見つかります．<br>
+                    なぜかと言うと，CSSに関する質問をしてくる人に，HTMLファイルとCSSファイルの違いについての説明をするよりは，HTMLファイルの中にCSSを直接書いてしまう方が説明がしやすいからです．<br>
+                    この講義の一つ前のページの説明内容が省略できるからですね．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-20.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    こちらはさらによくない方法です．<br>
+                    HTMLのタグの中でstyle属性を使ってスタイルを指定する方法です．<br>
+                    本当にどうしても一か所だけ文字の色を変えたくて，CSSファイルを用意するのが手間なときなどには使用してもいいですが，この方法ではコンテンツとデザインの分離ができません．
+                  </div>
+                </div>
+
+
+                <div class="slide"><img src="slides/03-21.JPG"></div>
+                <div class="container">
+                  <div class="faceicon"><img src="icon.jpg"></div>
+                  <div class="baloon">
+                    前のページで出したスライドの再掲です．<br>
+                    繰り返しになりますが，デザインの統一感というのは重要です．<br>
+                    複数のページによって構成されるWebサイト全体を通して統一感を持たせるためには，サイトのスタイルを指定する一つのCSSファイルを用意し，関連するHTMLファイルを跨いで参照するのがよいです．<br>
+                    HTMLファイルとCSSファイルを分けて，コンテンツとデザインを分離することを意識して作業しましょう．
+                  </div>
+                </div>
+                <!--ここまで-->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="anmt">
+          <section id="ex2"> <!-- 練習問題 -->
+            <h2>練習問題２</h2>
+            <div class="doc">
+              次の章の学習に進むためには，練習問題に取り組み，正答する必要があります．<br>
+              わからない場合には，講義資料に戻って内容を理解するようにしてください．<br><br>
+
+              <div class="ex">
+                <u>問題：</u><br>
+                Webファイルの編集作業をする上で意識すべき姿勢は以下のうちのどれか？
+              </div>
+            </div>
+            <p class="doc">
+              １．<a href="#sec1" class="qanda">ファイルの保存はしない</a><br>
+              ２．<a href="#sec1" class="qanda">ブラウザで編集する</a><br>
+              ３．<a href="#sec1" class="qanda">編集中は１時間に１度程度ブラウザで確認する</a><br>
+              ４．<a href="#sec1" class="qanda">テキストエディタで保存するよりも先にブラウザで確認する</a><br>
+              ５．<a href="WCD1_CSS3.html" class="qanda" id="correct">編集作業と確認作業のサイクルを小まめに回す</a><br>
+              ６．<a href="#sec1" class="qanda">ショートカットキーを使わない</a><br>
+            </p>
+          </section>
+        </div>
+
+        <footer>
+          © Faculty of Global Media Studies, Komazawa Univesity 2022.
+        </footer>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="WCD.js"></script>
+    </body>
+</html>
