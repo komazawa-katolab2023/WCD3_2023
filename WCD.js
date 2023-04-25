@@ -4,11 +4,6 @@ var baloon = document.querySelectorAll(".baloon" );
 var ref = document.referrer;
 var hirai = "thirai";
 var gms = "gmsmoodle";
-if((ref.indexOf(hirai)===-1)&&(ref.indexOf(gms)===-1)){
-  console.log(ref.indexOf(hirai));
-  console.log(ref);
-  window.alert("このURLへの直接アクセスは禁止されています．");
-}
 
 var ss = new Date();
 var count = function(){
