@@ -1,0 +1,40 @@
+h1{
+  font-size:50px;
+}
+h2{
+  color:red;
+  font-size: 30px;
+  background-color: skyblue;
+}
+div{color: red;}
+div.Koma{
+  color: #F0F;
+	font-size: 50px;
+}
+.GMS{
+  color: rgb(0,0,220);
+	font-size: 30px;
+}
+div#number{color: green;}
+#hirai{font-size: 80%;}
+*{color: yellow;}
+
+/* リンク先がW3Cの場合，黒 */
+a[href="http://www.w3.org/"] { color: black; }
+/* title属性があればスカイブルー */
+a[title] { color: skyblue; }
+
+/* 必ず以下の順番で記述 */
+a:link { color: blue; }
+a:visited { color: orange; }
+a:hover { color: pink; }
+a:active { color: red; }
+
+/* p要素の最初の文字にのみスタイルを適用 */
+p:first-letter { font-size: 150%; }
+/* 直前直後に要素を追加 */
+div:before { content: "[[[ "; }
+div:after { content: " ]]] "; }
+
+
+/* body{ background: url('bg.png') repeat-x fixed; } */
